@@ -133,3 +133,7 @@
 - **Hardware:** Computadores para desenvolvimento e dispositivos móveis para testes.
 - **Software:** IDEs, ferramentas de design, ferramentas de gerenciamento de projeto.
 - **Serviços:** Hospedagem para frontend e backend, ferramentas de monitoramento e análise.
+<img src="img/1.png">
+<img src="img/2.png">
+<img src="img/3.png">
+!texto[asdsa](img/1.png);
