@@ -1,48 +1,29 @@
-import Todo from "@/models/Todo";
-import connectionMongo from "@/utils/dbConnect";
+import Todo from '@/models/Todo';
+import connectMongo from '@/utils/dbConnect';
 
-//Criar o CRUD
 
-// Read
-
-export const getTodos = async ()=> {
-    await connectionMongo();
-    try {
-        return await Todo.find();
-    } catch (error) {
-        console.error(error);
-    }
+export const getTodos = async () => {
+  await connectMongo();
+  return await Todo.find({});
 };
 
-// Create
 
-export const creatTodo = async (data)=> {
-    await connectionMongo();
-    try {
-        return await Todo.create(data);
-    } catch (error) {
-        console.error(error);
-    }
+export const createTodo = async (data) => {
+  await connectMongo();
+  return await Todo.create(data);
 };
 
-// Update
 
-export const updateTodo = async (id, data)=> {
-    await connectionMongo();
-    try {
-        return await Todo.findByIdAndUpdate(id, data, { new: true,
-            runValidators: true,
-         });
-    } catch (error) {
-        console.error(error);
-    }
+export const updateTodo = async (id, data) => {
+  await connectMongo();
+  return await Todo.findByIdAndUpdate(id, data, {
+    new: true,
+    runValidators: true,
+  });
 };
 
-// Delete
 
-export const deleteTodo = async (id)=> {
-    await connectionMongo();
-   
-        return await Todo.deleteOne({_id:id});
- 
+export const deleteTodo = async (id) => {
+  await connectMongo();
+  return await Todo.deleteOne({ _id: id });
 };

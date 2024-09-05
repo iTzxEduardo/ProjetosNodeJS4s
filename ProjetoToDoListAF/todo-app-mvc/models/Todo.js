@@ -10,7 +10,8 @@ const TodoSchema = new mongoose.Schema({
     },
 
     completed:{
-        type: Enumerator('A Fazer', 'Fazendo', 'Concluida'),
+        type: String,
+        enum:['A Fazer', 'Fazendo', 'Concluida'],
         default: 'A Fazer'
     }
 });
